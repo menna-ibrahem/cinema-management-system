@@ -1,58 +1,136 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+#  Cinema Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A Laravel-based cinema management application that allows users to explore movies and provides administrators with tools to manage movie data. The project also includes a RESTful API and an AI-powered chatbot to help users discover movies.
 
-## About Laravel
+##  Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+###  Movie Management
+- Create, view, update, and delete movies (CRUD).
+- Store movie details such as title, description, release year, rating, and image.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+###  Authentication & Authorization
+- User authentication.
+- Role-based authorization and access control.
+- Protected administrative features.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+###  Admin Dashboard
+- Manage movie records through the dashboard.
+- Organize and maintain movie information.
 
-## Learning Laravel
+###  RESTful API
+- API endpoints for movie-related operations.
+- Test API requests using Postman.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+###  AI Movie Chatbot
+- AI-powered movie discussions and recommendations using the Google Gemini API.
+- Supports follow-up questions within the current conversation.
+- API key configured through an environment variable.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+##  Tech Stack
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+- **Backend:** PHP, Laravel
+- **Database:** MySQL
+- **API Testing:** Postman
+- **AI Integration:** Google Gemini API
+- **Version Control:** Git and GitHub
 
-## Agentic Development
+##  Installation & Setup
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### Prerequisites
+- PHP and Composer
+- MySQL
+- Node.js and npm, if required by the project's frontend assets
+
+### 1. Clone the repository
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/menna-ibrahem/cinema-management-system.git
+cd cinema-management-system
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Install dependencies
 
-## Contributing
+```bash
+composer install
+npm install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3. Configure environment variables
 
-## Code of Conduct
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+On Windows, you can copy `.env.example` to `.env` manually if needed.
 
-## Security Vulnerabilities
+### 4. Configure the database
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Create a MySQL database and update the database settings in `.env`:
 
-## License
+```env
+DB_DATABASE=your_database_name
+DB_USERNAME=your_database_username
+DB_PASSWORD=your_database_password
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 5. Configure the AI chatbot
+
+Add your Google Gemini API key to `.env`:
+
+```env
+GEMINI_API_KEY=your_gemini_api_key
+```
+
+Get an API key from [Google AI Studio](https://aistudio.google.com/apikey).
+
+**Security:** Never commit your `.env` file or expose API keys publicly.
+
+
+### 6. Configure the Movie Data API
+
+This project uses the [TMDB API](https://www.themoviedb.org/) to retrieve movie information.
+
+1. Create a TMDB account and obtain an API key from your account settings.
+2. Add the key to your `.env` file:
+
+```env
+TMDB_API_KEY=your_tmdb_api_key
+```
+
+Keep your API key private and never commit your `.env` file to GitHub.
+
+### 7. Run migrations
+
+```bash
+php artisan migrate
+```
+
+### 8. Start the development server
+
+```bash
+php artisan serve
+```
+
+Open the local URL displayed in your terminal.
+
+##  API Testing
+
+Use Postman to send requests to the application's API endpoints. Authentication requirements and available routes depend on the endpoint configuration.
+
+##  Security Notes
+
+- Keep API keys and database credentials in environment variables.
+- Do not commit `.env` or other files containing secrets.
+- Configure authentication and authorization appropriately before deploying the application.
+
+##  Author
+
+**Menna Ibrahim**
+
+- GitHub: [menna-ibrahem](https://github.com/menna-ibrahem)
+
+---
+
+*Built as a practical Laravel backend project to apply CRUD operations, authentication, authorization, database relationships, REST API development, and AI integration.*
+
