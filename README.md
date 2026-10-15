@@ -134,3 +134,36 @@ Use Postman to send requests to the application's API endpoints. Authentication 
 
 *Built as a practical Laravel backend project to apply CRUD operations, authentication, authorization, database relationships, REST API development, and AI integration.*
 
+
+**Project Screenshots**
+Explore the main features of the Cinema Management System through the screenshots below.
+
+### Admin Dashboard
+
+![Admin Dashboard](screenshots/admin%20dashboard.png)
+
+### Add Movie
+
+![Add Movie](screenshots/add-movie.png)
+
+### Edit Movie
+
+![Edit Movie](screenshots/edit-movie.png)
+
+### User Homepage
+
+![User Homepage](screenshots/user-homepage.png)
+
+### Movie Search
+
+![Movie Search](screenshots/search.png)
+
+### Watchlist
+
+![Watchlist](screenshots/watchlist.png)
+
+### AI Movie Chatbot
+
+![AI Movie Chatbot](screenshots/ai-chatbot.png)
+
+
